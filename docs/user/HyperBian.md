@@ -19,18 +19,13 @@ Here is a high-level overview of the installation process:
   
 ## Installation Instructions
   1. Download the appropriate [HyperBian image](https://github.com/Hyperion-Project/HyperBian/releases) for your Raspberry Pi [hardware](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html).
-
-      1. If using Raspberry Pi 1, 2 or Zero v1, download the asset with `armhf` in the filename.
-
-      2. For all other versions of Raspberry Pi, download the file with `arm64`.
+  
+     If using Raspberry Pi 1, 2 or Zero v1, download the asset with `armhf` in the filename.\
+     For all other versions of Raspberry Pi, download the file with `arm64`.
 
   2. Extract the `.zip` file. You should now have a `.img` file.
 
   3. Download and install your preferred tool for writing images to SD cards. The following instructions will cover these tools:
-
-      * [Raspberry Pi Imager](https://www.raspberrypi.com/documentation/computers/getting-started.html#raspberry-pi-imager)
-      * [balenaEtcher](https://www.balena.io/etcher/)
-      * [Win32 Disk Imager](https://sourceforge.net/projects/win32diskimager/)
 
 :::::: tabs :cache-lifetime="0" :options="{ useUrlFragment: false, disableScrollBehavior: true }"
 ::::: tab name="Raspberry Pi Imager"
@@ -86,9 +81,9 @@ Wi-Fi and System configuration files can be generated using the wizard tools bel
    - **Password**: Your Wi-Fi password
    - **Country**: Your two-letter country code, e.g., DE, US, GB, FR.
 
-:::: tip
-For a list of country codes, refer to the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-::::
+      :::: tip
+      For a list of country codes, refer to the [ISO 3166-1 alpha-2 standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+      ::::
 
 2. Click the `Save Configuration` button to save your customized `network-config` file.
 
@@ -188,10 +183,9 @@ Replace the placeholder or sample values with your desired configuration. You mi
 ## template: jinja
 #cloud-config
 
-# This is the user-data configuration file for cloud-init. By default this sets
-# up an initial user called "ubuntu" with password "ubuntu", which must be
-# changed at first login. However, many additional actions can be initiated on
-# first boot from this file. The cloud-init documentation has more details:
+# This is the user-data configuration file for cloud-init.
+# Many additional actions can be initiated on first boot from this file.
+# The cloud-init documentation has more details:
 #
 # https://cloudinit.readthedocs.io/
 #
@@ -244,9 +238,9 @@ rpi:
   interfaces:
     spi: true
 
-###############################
-### DO NOT CHANGE THE BELOW ###
-###############################
+####################################################
+### DO NOT CHANGE THE BELOW BESIDES THE PASSWORD ###
+####################################################
 
 users:
 - name: {{ HYPERION_USER }}
